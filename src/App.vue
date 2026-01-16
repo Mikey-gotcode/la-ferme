@@ -32,30 +32,61 @@ const navigateTo = (id) => {
         
         <InquiryForm v-if="activeSection === 'functions' || activeSection === 'inquiry'" />
 
-        <div v-if="activeSection === 'petting'" class="py-20 text-center italic">
-          <div class="w-full mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-4xl mb-6 italic">Meet the Residents</h2>
-                <p class="text-lg font-light text-gray-600 mb-8 leading-relaxed">
-                    Our animals are an integral part of our farm's circle of life. From our heritage chickens to our friendly rabbits, every interaction is a chance for children to learn about nature.
-                </p>
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-4 border-b pb-4 border-[#2D4739]/10">
-                        <span class="font-serif italic text-2xl text-[#8B4513]">01</span>
-                        <span class="text-xs uppercase tracking-widest font-bold">The Rabbit Burrow</span>
-                    </div>
-                    <div class="flex items-center space-x-4 border-b pb-4 border-[#2D4739]/10">
-                        <span class="font-serif italic text-2xl text-[#8B4513]">02</span>
-                        <span class="text-xs uppercase tracking-widest font-bold">Chicken Run</span>
-                    </div>
-                </div>
+        <div v-if="activeSection === 'petting'" class="py-16 md:py-24 bg-[#F9F7F2]">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        
+        <div class="text-center lg:text-left order-2 lg:order-1">
+          <span class="text-[10px] uppercase tracking-[0.4em] text-[#C5A059] font-bold mb-4 block">The Petting Area</span>
+          <h2 class="text-3xl md:text-5xl mb-6 italic font-serif text-[#2D4739]">Meet the Residents</h2>
+          <p class="text-base md:text-lg font-light text-gray-600 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
+            Our animals are an integral part of our farm's circle of life. From our heritage chickens to our friendly rabbits, every interaction is a chance for children to learn about nature.
+          </p>
+          
+          <div class="space-y-0">
+            <div v-for="(resident, index) in [
+              { num: '01', title: 'The Rabbit Burrow' },
+              { num: '02', title: 'The Chicken Run' },
+              { num: '03', title: 'Duck Pond' }
+            ]" 
+            :key="index"
+            class="group flex items-center space-x-6 border-b py-5 border-[#2D4739]/10 hover:bg-[#2D4739]/5 transition-colors px-4 cursor-default">
+              <span class="font-serif italic text-2xl md:text-3xl text-[#8B4513] opacity-60 group-hover:opacity-100 transition-opacity">
+                {{ resident.num }}
+              </span>
+              <span class="text-xs md:text-sm uppercase tracking-[0.2em] font-bold text-[#2D4739]">
+                {{ resident.title }}
+              </span>
             </div>
-            <div class="grid grid-cols-2 gap-4">
-                <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&q=80" class="rounded h-full object-cover" alt="Rabbit">
-                <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&q=80" class="rounded h-full object-cover" alt="Hen">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 md:gap-6 order-1 lg:order-2">
+          <div class="space-y-3 md:space-y-6">
+            <img 
+              src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&q=80" 
+              class="rounded-2xl w-full aspect-[3/4] object-cover shadow-lg hover:scale-[1.02] transition-transform duration-500" 
+              alt="Rabbit"
+            >
+            <div class="bg-[#2D4739] rounded-2xl aspect-square flex items-center justify-center p-6 text-center">
+               <p class="text-white font-serif italic text-sm md:text-lg">Ethical & Organic Husbandry</p>
             </div>
+          </div>
+          <div class="pt-8 md:pt-12 space-y-3 md:space-y-6">
+            <div class="bg-[#C5A059]/20 rounded-2xl aspect-square flex items-center justify-center p-6">
+               <span class="text-[#8B4513] text-4xl">🌿</span>
+            </div>
+            <img 
+              src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&q=80" 
+              class="rounded-2xl w-full aspect-[3/4] object-cover shadow-lg hover:scale-[1.02] transition-transform duration-500" 
+              alt="Hen"
+            >
+          </div>
         </div>
-        </div>
+
+      </div>
+    </div>
+  </div>
 
         <div v-if="activeSection === 'table'" class="py-20 text-center italic">
 
