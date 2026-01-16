@@ -80,8 +80,10 @@ const handleNav = (target) => {
 
 <style scoped>
 .hamburger-line {
+  @reference "../style.css";
   @apply w-8 h-[2px] bg-ferme-green transition-all duration-500 ease-in-out transform;
 }
+
 
 .cta-button {
   @apply !bg-ferme-green !text-white px-8 py-3 text-xs md:text-sm uppercase tracking-[0.2em] font-bold 
