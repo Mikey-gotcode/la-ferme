@@ -10,7 +10,8 @@ const navItems = [
   { label: 'The Garden', target: 'garden' },
   { label: 'Petting Area', target: 'petting' },
   { label: 'Functions', target: 'functions', highlight: true },
-  { label: 'The Table', target: 'table' }
+  { label: 'The Table', target: 'table' },
+  { label: 'Picnic Events' , target: 'picnic'}
 ];
 
 const handleNav = (target) => {

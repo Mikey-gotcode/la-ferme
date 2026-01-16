@@ -5,6 +5,8 @@ import Hero from './components/Hero.vue';
 import Booking from './components/TourBooking.vue';
 import GardenMap from './components/GardenMap.vue';
 import InquiryForm from './components/InquiryForm.vue';
+import EventsGrid from './components/EventsGrid.vue';
+
 import About from './components/About.vue';
 import Footer from './components/Footer.vue';
 
@@ -27,8 +29,9 @@ const navigateTo = (id) => {
         <About v-if="activeSection === 'about'" />
         
         <Booking v-if="activeSection === 'booking'" />
-        
+        <router-view />        
         <GardenMap v-if="activeSection === 'garden'" />
+        <EventsGrid v-if="activeSection ==='picnic'"/>
         
         <InquiryForm v-if="activeSection === 'functions' || activeSection === 'inquiry'" />
 
