@@ -20,7 +20,7 @@ const navigateTo = (id) => {
   <div class="antialiased bg-[#F9F7F2]">
     <Navbar @nav="navigateTo" />
 
-    <main class="min-h-screen">
+    <main class="h-full">
       <div class="fade-in">
         <Hero v-if="activeSection === 'home'" @nav="navigateTo" />
         
@@ -57,12 +57,12 @@ const navigateTo = (id) => {
         </div>
         </div>
 
-        <div v-if="activeSection === 'table'" >
+        <div v-if="activeSection === 'table'" class="py-20 text-center italic">
 
-          <div class="w-full text-center">
+          <div class="w-full mx-auto text-center">
             <h2 class="text-4xl italic mb-12">The Seasonal Menu</h2>
             <div class="border border-[#2D4739]/10 p-12 bg-white relative">
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#2D4739] text-[#F9F7F2] px-4 py-1 text-[10px] uppercase tracking-widest font-bold">Today's Harvest</div>
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#2D4739] text-[#F9F7F2] px-6 py-1 text-[10px] uppercase tracking-widest font-bold">Today's Harvest</div>
                 <div class="space-y-10 mt-6">
                     <div>
                         <h4 class="text-xl font-serif">Limuru Field Salad</h4>
@@ -87,7 +87,7 @@ const navigateTo = (id) => {
 
     <section class="py-16 bg-white border-y border-[#2D4739]/10">
             <p class="text-center text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-10 font-bold">Trusted by Nairobi's Finest</p>
-            <div class="flex flex-wrap justify-around items-center opacity-40 grayscale px-4 gap-8">
+            <div class="flex flex-wrap justify-around items-center opacity-40 grayscale px-10 gap-8">
                 <span class="text-2xl font-bold">ZUCCHINI</span>
                 <span class="text-2xl font-serif italic">Artcaffé</span>
                 <span class="text-2xl font-light tracking-tighter uppercase">Greenspoon</span>
